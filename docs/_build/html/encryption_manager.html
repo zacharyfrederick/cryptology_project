@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>encryption_manager module &mdash; gatorchat  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gatorchat
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">encryption_manager module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gatorchat</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>encryption_manager module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/encryption_manager.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-encryption_manager">
+<span id="encryption-manager-module"></span><h1>encryption_manager module<a class="headerlink" href="#module-encryption_manager" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="encryption_manager.EncryptionManager">
+<em class="property">class </em><code class="sig-prename descclassname">encryption_manager.</code><code class="sig-name descname">EncryptionManager</code><a class="headerlink" href="#encryption_manager.EncryptionManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.create_encrypted_key_data">
+<code class="sig-name descname">create_encrypted_key_data</code><span class="sig-paren">(</span><em class="sig-param">raw_data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.create_encrypted_key_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Takes in data, encrypts it symmetrically, then encrypts the key data using the server’s public key]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{</strong><strong>[</strong><strong>string</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the data to encrypt</strong><strong>]</strong> (<em>raw_data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[(ctx key_data)] – [The ciphertext and the encrypted key data]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.decrypt_contents">
+<code class="sig-name descname">decrypt_contents</code><span class="sig-paren">(</span><em class="sig-param">contents</em>, <em class="sig-param">key</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.decrypt_contents" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Decrypts the contents using the key and iv with AES]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{bytes} -- The encrypted content</strong> (<em>contents</em>) – </p></li>
+<li><p><strong>{byte} -- The symmetric key</strong> (<em>key</em>) – </p></li>
+<li><p><strong>{byte} -- The initialization vector</strong> (<em>iv</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[json] – [The decrypted contents in json format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.decrypt_key_data">
+<code class="sig-name descname">decrypt_key_data</code><span class="sig-paren">(</span><em class="sig-param">priv_key</em>, <em class="sig-param">key_data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.decrypt_key_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypts the key data using the private key and RSA</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{byte} -- private key to decrypt with</strong> (<em>priv_key</em>) – </p></li>
+<li><p><strong>{json} -- A json object with the key data in hex format</strong> (<em>key_data</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string – The plaintext encodes as utf-8</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.decrypt_symmetric_w_params">
+<code class="sig-name descname">decrypt_symmetric_w_params</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.decrypt_symmetric_w_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypts the data using the key and IV using AES and CFB block mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{byte} -- data in byte format</strong> (<em>data</em>) – </p></li>
+<li><p><strong>{byte} -- the key to decrypt</strong> (<em>key</em>) – </p></li>
+<li><p><strong>{byte} -- Initialization vector</strong> (<em>iv</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[string] – [plaintext]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.encrypt_symmetric">
+<code class="sig-name descname">encrypt_symmetric</code><span class="sig-paren">(</span><em class="sig-param">raw_data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.encrypt_symmetric" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Encrypt data symmetrically using a generated IV and key using AES]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{</strong><strong>[</strong><strong>String</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the data to encrypt</strong><strong>]</strong> (<em>raw_data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[(ctx, key, iv)] – [The ciphertext, key used, and IV all in hex]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.encrypt_symmetric_w_params">
+<code class="sig-name descname">encrypt_symmetric_w_params</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.encrypt_symmetric_w_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypts the data symmetrically using the key and iv with AES in CFB block mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{string} -- the data to encrypt</strong> (<em>data</em>) – </p></li>
+<li><p><strong>{byte} -- the key to encrypy with</strong> (<em>key</em>) – </p></li>
+<li><p><strong>{byte} -- initialization vector</strong> (<em>iv</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ciphertext – the ciphertext as hex</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.extract_key_data_contents">
+<code class="sig-name descname">extract_key_data_contents</code><span class="sig-paren">(</span><em class="sig-param">key_data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.extract_key_data_contents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the key data values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{</strong><strong>[</strong><strong>json</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>The json object containing the key and iv</strong><strong>]</strong> (<em>key_data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[(key, iv)] – [The byte representation of the key and iv]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.get_iv">
+<code class="sig-name descname">get_iv</code><span class="sig-paren">(</span><em class="sig-param">hex=False</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.get_iv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random 16 byte initialization vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments</dt>
+<dd class="field-odd"><p><strong>{bool} --</strong><strong> [</strong><strong>Return the IV in hex</strong><strong>] </strong><strong>(</strong><strong>default</strong> (<em>hex</em>) – {False})</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Initlization vector] – [A 16-byte IV in the specified format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.get_server_pub_key">
+<code class="sig-name descname">get_server_pub_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.get_server_pub_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the server’s public key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bytes – The public key as bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.get_symmetric_key">
+<code class="sig-name descname">get_symmetric_key</code><span class="sig-paren">(</span><em class="sig-param">hex=False</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.get_symmetric_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random 32-byte symmetric key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments</dt>
+<dd class="field-odd"><p><strong>{bool} --</strong><strong> [</strong><strong>Return the key in hex</strong><strong>] </strong><strong>(</strong><strong>default</strong> (<em>hex</em>) – {False})</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[key] – [32 byte symmetric key in the specified format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.hex_to_bytes">
+<code class="sig-name descname">hex_to_bytes</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.hex_to_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Converts a hex value to its byte representation]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{</strong><strong>[</strong><strong>String</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>The hex string to convert</strong><strong>]</strong> (<em>data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[byte] – [The converted data to byte format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.process_chat_request_data">
+<code class="sig-name descname">process_chat_request_data</code><span class="sig-paren">(</span><em class="sig-param">raw_data</em>, <em class="sig-param">priv_key</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.process_chat_request_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in raw data from a chat request and decrypts it using the private key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{</strong><strong>[</strong><strong>json</strong><strong>]</strong><strong>} -- the raw post data in json format</strong> (<em>raw_data</em>) – </p></li>
+<li><p><strong>{byte} -- private key to decrypt with</strong> (<em>priv_key</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(contents, msg, signature) – Returns the decrypted contents, the contents as json, and the signature of the chat request</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.process_dict_for_encry">
+<code class="sig-name descname">process_dict_for_encry</code><span class="sig-paren">(</span><em class="sig-param">raw_data</em>, <em class="sig-param">encode=False</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.process_dict_for_encry" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Takes in a dictionary and encodes it as json]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{</strong><strong>[</strong><strong>The data to encode</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>The dictionary to encode to json</strong><strong>]</strong> (<em>raw_data</em>) – </p>
+</dd>
+<dt class="field-even">Keyword Arguments</dt>
+<dd class="field-even"><p><strong>{bool} --</strong><strong> [</strong><strong>Whether to return the data encoded as bytes</strong><strong>] </strong><strong>(</strong><strong>default</strong> (<em>encode</em>) – {False})</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[json] – [A json object in the specified format]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.sign_message">
+<code class="sig-name descname">sign_message</code><span class="sig-paren">(</span><em class="sig-param">msg</em>, <em class="sig-param">priv_key</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.sign_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Signs a message using a private key with PCS1_v1_5]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{</strong><strong>[</strong><strong>string</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the message to sign</strong><strong>]</strong> (<em>msg</em>) – </p></li>
+<li><p><strong>{</strong><strong>[</strong><strong>byte</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the private key to sign with</strong><strong>]</strong> (<em>priv_key</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[hex] – [the signature encodes as hex]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="encryption_manager.EncryptionManager.verify_message">
+<code class="sig-name descname">verify_message</code><span class="sig-paren">(</span><em class="sig-param">msg</em>, <em class="sig-param">pub_key</em>, <em class="sig-param">signature</em><span class="sig-paren">)</span><a class="headerlink" href="#encryption_manager.EncryptionManager.verify_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in a message and signature and verifies the validity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{</strong><strong>[</strong><strong>string</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the decrypted message</strong><strong>]</strong> (<em>msg</em>) – </p></li>
+<li><p><strong>{</strong><strong>[</strong><strong>bytes</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the public key to verify with</strong><strong>]</strong> (<em>pub_key</em>) – </p></li>
+<li><p><strong>{</strong><strong>[</strong><strong>bytes</strong><strong>]</strong><strong>} --</strong><strong> [</strong><strong>the unverified signature</strong><strong>]</strong> (<em>signature</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[bool] – [whether the verification was successful or not]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, zachary frederick
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

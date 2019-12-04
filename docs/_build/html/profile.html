@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>profile module &mdash; gatorchat  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gatorchat
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">profile module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gatorchat</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>profile module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/profile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-profile">
+<span id="profile-module"></span><h1>profile module<a class="headerlink" href="#module-profile" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="profile.Profile">
+<em class="property">class </em><code class="sig-prename descclassname">profile.</code><code class="sig-name descname">Profile</code><a class="headerlink" href="#profile.Profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>class that houses the profile data. Responsbile for creation loading and decryption</p>
+<dl class="class">
+<dt id="profile.Profile.FileOutput">
+<em class="property">class </em><code class="sig-name descname">FileOutput</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">hashed_data</em>, <em class="sig-param">iv</em>, <em class="sig-param">salt</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.FileOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A subclass that creates the file output. Used because the Profile data is serialized to json and we want this data saved separately</p>
+<dl class="method">
+<dt id="profile.Profile.FileOutput.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.FileOutput.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a json object of this objects data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string – json represenation of the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.collect_json_values">
+<code class="sig-name descname">collect_json_values</code><span class="sig-paren">(</span><em class="sig-param">raw_data</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.collect_json_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects the data, hash, iv, and salt from the raw profile data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{json} -- json object of the raw profile data</strong> (<em>raw_data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(string, byte, string, string) – Returns the data object, the hash, the iv, and the salt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.collect_passowrd">
+<code class="sig-name descname">collect_passowrd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.collect_passowrd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects a password using the getpass() function so it doesnt show on the console</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string – password</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.convert_from_hex">
+<code class="sig-name descname">convert_from_hex</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.convert_from_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a hex value to a byte value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{string} -- hex value</strong> (<em>value</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>byte – byte representation of the value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.create_key">
+<code class="sig-name descname">create_key</code><span class="sig-paren">(</span><em class="sig-param">password</em>, <em class="sig-param">salt</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.create_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a symmetric key from a password, an 8-byte salt value using PBKDF2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{string} -- passphrase for the user</strong> (<em>password</em>) – </p></li>
+<li><p><strong>{byte} -- salt value</strong> (<em>salt</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>byte – 32 byte symmetric key</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.create_password">
+<code class="sig-name descname">create_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.create_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects a password from the user. Verifies it and creates a symmetric key from the passphrase</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(byte, byte) – A tuple containing the salt used with the passphrase and the resulting symmetric key</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.create_profile">
+<code class="sig-name descname">create_profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.create_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the create a profile process</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.decrypt_data">
+<code class="sig-name descname">decrypt_data</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.decrypt_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypts the data using the specified key and iv using AES and CFB block mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{byte} -- encrypted data</strong> (<em>data</em>) – </p></li>
+<li><p><strong>{byte} -- key</strong> (<em>key</em>) – </p></li>
+<li><p><strong>{byte} -- initialization vector</strong> (<em>iv</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>byte – plaintext of the encrypted data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.encrypt_data">
+<code class="sig-name descname">encrypt_data</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.encrypt_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypts the data using the key, iv and AES w/ CFB block mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{string} -- data to be encrypted</strong> (<em>data</em>) – </p></li>
+<li><p><strong>{byte} -- key to use</strong> (<em>key</em>) – </p></li>
+<li><p><strong>{byte} -- initialization vector</strong> (<em>iv</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>byte – ciphertext of the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.generate_keys">
+<code class="sig-name descname">generate_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.generate_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates RSA keys and assigns them to current profile instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.get_iv">
+<code class="sig-name descname">get_iv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.get_iv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a 16 byte random iv</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>byte – iv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.hash_data">
+<code class="sig-name descname">hash_data</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.hash_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hashes the data using md5</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{string} -- data to be hased</strong> (<em>data</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string – hex value for the md5 hash of the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.hash_password">
+<code class="sig-name descname">hash_password</code><span class="sig-paren">(</span><em class="sig-param">password</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.hash_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hashes a password using an 8 byte salt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{string} -- user's passphrase</strong> (<em>password</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(byte, byte) – a tuple containing the salt and the key</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.read_data">
+<code class="sig-name descname">read_data</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the profile data from the specified filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{string} -- filename of the profile data</strong> (<em>filename</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string – plaintext of the decrypted profile data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.register_w_server">
+<code class="sig-name descname">register_w_server</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.register_w_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers the collect profile data with the server. Sends the identity of the profile encrypted symmetrically
+while the key data used is sent encrypted with the server’s public key</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="profile.Profile.save_data">
+<code class="sig-name descname">save_data</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">key</em>, <em class="sig-param">salt</em><span class="sig-paren">)</span><a class="headerlink" href="#profile.Profile.save_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the profile data to the specified filename along with the salt value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{string} -- filename to output to</strong> (<em>filename</em>) – </p></li>
+<li><p><strong>{byte} -- symmetric key to encrypt data with</strong> (<em>key</em>) – </p></li>
+<li><p><strong>{byte} -- salt used with the passphrase</strong> (<em>salt</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, zachary frederick
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

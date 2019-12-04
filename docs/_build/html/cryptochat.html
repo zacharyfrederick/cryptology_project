@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cryptochat module &mdash; gatorchat  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gatorchat
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">cryptochat module</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gatorchat</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>cryptochat module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/cryptochat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cryptochat-module">
+<h1>cryptochat module<a class="headerlink" href="#cryptochat-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This is the main module for GatorChat. All you need to do to is create an instance of CryptoChat and call <em>start()</em> from the main method of your program</p>
+<span class="target" id="module-cryptochat"></span><dl class="class">
+<dt id="cryptochat.CryptoChat">
+<em class="property">class </em><code class="sig-prename descclassname">cryptochat.</code><code class="sig-name descname">CryptoChat</code><a class="headerlink" href="#cryptochat.CryptoChat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The main class that runs the progrm</p>
+<dl class="method">
+<dt id="cryptochat.CryptoChat.create_chat">
+<code class="sig-name descname">create_chat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.create_chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method attempts to establish a connection a host that is currently hosting a chat</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.create_profile">
+<code class="sig-name descname">create_profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.create_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>method that creates a profile</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.decrypt_profile">
+<code class="sig-name descname">decrypt_profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.decrypt_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is responsible for taking in the passphrase of the user in order
+to decrypt their profile. Deletes a profile after the max number of login attempts has been reached</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.determine_action">
+<code class="sig-name descname">determine_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.determine_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines which action to take. Options are create or load a profile</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.get_connection_info">
+<code class="sig-name descname">get_connection_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.get_connection_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a tuple of the loaded profile data’s connection info</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.get_files">
+<code class="sig-name descname">get_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.get_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects the profiles in the ‘profile’ directory. Exits the program if the dir does not exist</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.get_str_value">
+<code class="sig-name descname">get_str_value</code><span class="sig-paren">(</span><em class="sig-param">prompt</em><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.get_str_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a string value from the console using the specified prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{string} -- the prompt to display</strong> (<em>prompt</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>stirng1 – collected string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.host_new_chat">
+<code class="sig-name descname">host_new_chat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.host_new_chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to host a new chat. Takes in a desired password and waits for connections</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.load_profile">
+<code class="sig-name descname">load_profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.load_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the load profile process and monitors its stats</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.run_loop">
+<code class="sig-name descname">run_loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.run_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main loop of the program</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.select_profile">
+<code class="sig-name descname">select_profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.select_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints out the available profiles and prompts the user to pick one. Once selected it decrypts the profile and sets the profile data for this session
+If no profiles are found it starts the create a profile process</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptochat.CryptoChat.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptochat.CryptoChat.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the program. Collects the profile files and determines the action to take</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, zachary frederick
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
