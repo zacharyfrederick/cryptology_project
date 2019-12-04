@@ -154,7 +154,7 @@
 <p>The messenger class responsible for creating and managing the ZMQ sockets</p>
 <dl class="method">
 <dt id="messaging.Messenger.connect_to_host">
-<code class="sig-name descname">connect_to_host</code><span class="sig-paren">(</span><em class="sig-param">ip</em>, <em class="sig-param">port</em>, <em class="sig-param">kab</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#messaging.Messenger.connect_to_host" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">connect_to_host</code><span class="sig-paren">(</span><em class="sig-param">ip</em>, <em class="sig-param">port</em>, <em class="sig-param">kab</em>, <em class="sig-param">iv</em>, <em class="sig-param">username</em><span class="sig-paren">)</span><a class="headerlink" href="#messaging.Messenger.connect_to_host" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connects to a host over the specified ip, port. Encrypts and decrypts
 data using the specified key and iv. Once a connection is established stdin and the ZMQ socket
 are monitored for input. When stdin input is detected it is read, encrypted and sent over the socket. When
@@ -167,6 +167,7 @@ the host responds with a corresponding exit message and closes its connection</p
 <li><p><strong>{string} -- the port to connect through</strong> (<em>port</em>) – </p></li>
 <li><p><strong>{byte} -- the symmetric key to use</strong> (<em>kab</em>) – </p></li>
 <li><p><strong>{byte} -- intialization vector</strong> (<em>iv</em>) – </p></li>
+<li><p><strong>{stirng} -- the username of the other host to display</strong> (<em>username</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -174,7 +175,7 @@ the host responds with a corresponding exit message and closes its connection</p
 
 <dl class="method">
 <dt id="messaging.Messenger.wait_for_host">
-<code class="sig-name descname">wait_for_host</code><span class="sig-paren">(</span><em class="sig-param">port</em>, <em class="sig-param">kab</em>, <em class="sig-param">iv</em><span class="sig-paren">)</span><a class="headerlink" href="#messaging.Messenger.wait_for_host" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">wait_for_host</code><span class="sig-paren">(</span><em class="sig-param">port</em>, <em class="sig-param">kab</em>, <em class="sig-param">iv</em>, <em class="sig-param">username</em><span class="sig-paren">)</span><a class="headerlink" href="#messaging.Messenger.wait_for_host" title="Permalink to this definition">¶</a></dt>
 <dd><p>Waits for a host to connect over the specified port. Decrypts and ecrypts traffic using kab and iv.
 Establishes a ZMQ socket and polls stdin and the socket for incoming data. When stdin input is detected it is read,
 encrypted and sent over the socket. When the socket has incoming data it is read, decrypted, and printed to the screen.
@@ -185,6 +186,7 @@ When an “exit()” message is recieved the host responds with a corresponding 
 <li><p><strong>{string} -- the port to accept connections through</strong> (<em>port</em>) – </p></li>
 <li><p><strong>{byte} -- the symmetric key to use</strong> (<em>kab</em>) – </p></li>
 <li><p><strong>{byte} -- initialization vector</strong> (<em>iv</em>) – </p></li>
+<li><p><strong>{stirng} -- The username to display for the output messages</strong> (<em>username</em>) – </p></li>
 </ul>
 </dd>
 </dl>

@@ -82,6 +82,8 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to gatorchat’s documentation!</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+<li><a class="reference internal" href="#id1">Testing</a></li>
 <li><a class="reference internal" href="#extra-information">Extra Information</a></li>
 </ul>
 </li>
@@ -156,8 +158,14 @@
 <h1>Welcome to gatorchat’s documentation!<a class="headerlink" href="#welcome-to-gatorchat-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>GatorChat is an ecrypted peer to peer chat client. It is built using a client and Django server that handles key distribution and authentication. To start
-browsing the documentation head over to the <a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a> page.</p>
+<p>GatorChat is an encrypted peer to peer chat client. It is built using a client and Django server that handles key distribution and authentication. To start
+browsing the documentation head over to the <a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a> page. Ideally a group would run their own server rather than have a single
+public directory. The passphrases for profile’s A and B are both <strong>hello</strong>.</p>
+<div class="section" id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<p>This project was built with python 3.7.5. To install the necessary requirements run <em>pip install requirements.txt</em> from the home directory. Included is the virtual environment
+used to build this project, it is unlikely to work on other machines so create your own using <em>virtualenv</em>. It is always best to create a virtual enviroment before installing
+the necessary packages.</p>
 <dl class="simple">
 <dt>Technologies used:</dt><dd><ul class="simple">
 <li><p>ZeroMQ Asynchronous messaging library</p></li>
@@ -167,18 +175,25 @@ browsing the documentation head over to the <a class="reference internal" href="
 </ul>
 </dd>
 <dt>Steps to run:</dt><dd><ol class="arabic simple">
-<li><p>Start the django server by running <em>python manage.py runserver</em> from the <em>server/chat_server/chat_server/</em> directory</p></li>
+<li><p>Start the django server by running <em>python manage.py runserver</em> from the <em>server/chat_server/</em> directory</p></li>
 <li><p>Launch your clients by running <em>python main.py</em> from the <em>client/</em> directory and sign in or create a profile</p></li>
 <li><p>With one host select <em>Host a new chat</em> from the main menu and enter a desired password</p></li>
 <li><p>With another host select <em>Create a new chat</em> from the main menu and enter the username of the other host and the password</p></li>
 <li><p>Start chatting!</p></li>
+<li><p>Type ‘exit()’ to disconnect from the chat.</p></li>
 </ol>
 </dd>
 </dl>
+</div>
+<div class="section" id="id1">
+<h3>Testing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>To run the test code run <em>python tests.py</em> from the <em>client/</em> directory. Currently these tests
+check the symmetric and asymmetric encryption capabilities as well as the messsage signing function.</p>
+</div>
 <div class="section" id="extra-information">
 <h3>Extra Information<a class="headerlink" href="#extra-information" title="Permalink to this headline">¶</a></h3>
 <p>Currently the client and server are configured to run from local host due to the port forwarding requirements of running it on UF’s network.
-To change that you will need to change the client code which connects to the server.</p>
+To change that you will need to change the client code to reflect the ip address of the server as well as configure your router for port forwarding.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

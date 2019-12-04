@@ -1,0 +1,4 @@
+----------GatorChat Readme----------
+
+The easiest way to understand this program is to head to the 'docs/_build/html/' directory and load index.html.
+This will open an html page created with sphinx that serves as the interactive documentation.
